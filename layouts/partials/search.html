@@ -76,7 +76,7 @@ search.addEventListener('keyup', function()  {
 } )
 
 // fetch search index
-fetch('/index.json').then ( res => {
+fetch({{ .Site.BaseURL }}+ '/index.json').then ( res => {
 
     // parse JSON
     res.json().then(searchIndex => {
