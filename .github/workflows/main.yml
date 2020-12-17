@@ -35,11 +35,11 @@ jobs:
           extended: true 
           
        #build the site
-         - name: build HUGO site
-            run: hugo
+      - name: Build HUGO Site
+        run: hugo
             
         #Commit to the new branch
-          - name: Deploy to Github Pages
+      - name: Deploy to Github Pages
             uses: crazy-max/ghaction-github-pages@v2.2.0
             with:
                 target_branch: gh-pages
