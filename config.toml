@@ -1,0 +1,9 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "JAMSite"
+theme = "tale"
+copyright = "copyright 2020 Vendim Birbili Academy"
+disableKinds = ["section"]
+
+[outputs]
+home = ["HTML", "JSON"]

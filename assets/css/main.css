@@ -1,0 +1,11 @@
+body{
+    font-size: 1.25em;
+}
+    #search {
+        float: right;
+        position: relative;
+        bottom: 0.2rem;
+        padding: 0.5rem, 1rem;
+        width: 15rem;
+        border: 1px solid lightgray;
+    }

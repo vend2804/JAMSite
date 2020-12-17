@@ -1,0 +1,64 @@
+<style media="screen">
+
+#contact 
+{
+    background: #DEDEDE;
+    border-radius: 5px;
+    padding: 1rem;
+
+}
+#contact input, #contact textarea {
+    display: block;
+    padding: 0.5rem, 1rem;
+    width: 100%;
+    font-size: 1.25rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    outline: none;
+    border: none;
+}
+#contact button {
+    font-size: 1.25rem;
+    background: dodgerblue;
+    border-radius: 5px;
+    color: white;
+    width: 10rem;
+}
+</style>
+
+<script>
+    // submit contact form to the server
+    function handleContact () {
+
+       // console.log('sumbitting Contact')
+       let contactForm = document.getElementById('contact')
+       let email = contactForm.elements[0]
+       let message = contactForm.elements[1]
+
+       // create POST Body
+       let formData = {}
+       formData[email.name] = email.value
+       formData[message.name] = message.value
+
+       // http request to the Server
+       fetch('http://localhost:2222/', {
+           method: 'post',
+           mode: 'no-cors',
+           body: JSON.stringify(formData)
+       }).then ( () => {
+           // replace the form with send message
+           contactForm.innerHTML = '<strong>Message Sent!</strong>'
+       })
+
+
+        //prevent submit
+        return false;
+
+    }
+
+</script>
+<form id="contact" onsubmit="return handleContact()" >
+    <input type="text" id="email" name="email" value="" placeholder="email" required >
+    <textarea name="message" placeholder="message" rows="8" cols="80"></textarea>
+<button type="submit" name="button">send message</button>
+</form>

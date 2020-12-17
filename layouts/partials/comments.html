@@ -1,0 +1,5 @@
+{{- if .Params.PhotoAuthor }}
+<small>This Photo has been taken by : {{.Params.PhotoAuthor}}</small>
+{{- end }}
+<br> 
+<textarea style="width: 100%; font-size: 1.25rem;padding:1rem;" placeholder="Leave a comment for '{{.Title}}'"></textarea>
